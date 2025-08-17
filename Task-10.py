@@ -47,3 +47,4 @@ def test_dashboard_url_after_login(driver):
     PageSource = driver.page_source  # To Extract entire HTML content
     with open("Task_10.txt", "w", encoding="utf-8") as file:
         file.write(PageSource)
+
