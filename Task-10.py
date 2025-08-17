@@ -12,6 +12,10 @@ driver.find_element(By.ID,"user-name").send_keys("standard_user")
 driver.find_element(By.ID,"password").send_keys("secret_sauce")
 driver.find_element(By.NAME,"login-button").click()
 
+time.sleep(3)
+
+driver.quit()
+
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
@@ -34,7 +38,7 @@ def test_dashboard_url_after_login(driver):
     driver.find_element(By.ID, "login-button").click()
     assert driver.current_url == "https://www.saucedemo.com/inventory.html"
 
-    time.sleep(5)
+    time.sleep(3)
 
     title = driver.title  # Title of the webpage
     print("\n Title of the page:", title)
